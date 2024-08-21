@@ -1,7 +1,9 @@
-FROM node:13-slim
+FROM node:16-alpine
 
 WORKDIR /app
 
-ADD . /app
+COPY . ./
 
-CMD node server.js
+RUN npm install
+
+CMD npm start
